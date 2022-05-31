@@ -20,7 +20,6 @@ export class AppComponent {
 
   onBlueprintAdded(bluePrintData: {
     serverName: string;
-
     serverContent: string;
   }) {
     this.serverElements.push({
@@ -28,5 +27,13 @@ export class AppComponent {
       name: bluePrintData.serverName,
       content: bluePrintData.serverContent,
     });
+  }
+
+  onChangeFirst() {
+    this.serverElements[0].name = "changed!";
+  }
+
+  onDestoryFirst() {
+    this.serverElements.splice(0, 1);
   }
 }
